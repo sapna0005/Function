@@ -14,7 +14,11 @@ bool balance(string &str)
         }
         else if(str[i]==']')
         {
-           square--;
+            if (square==0)
+            {
+                return false;
+            }
+         square--;
         }
         else if(str[i]=='{')
         {
@@ -22,6 +26,11 @@ bool balance(string &str)
         }
         else if(str[i]=='}')
         {
+         if (curly==0)
+         {
+            return false;
+         }
+         
            curly--;
         }
         
@@ -31,6 +40,10 @@ bool balance(string &str)
         }
         else if(str[i]==')')
         {
+          if(circle==0)
+          {
+            return false;
+          }
           circle--;
         }
     }
